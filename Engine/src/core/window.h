@@ -1,11 +1,13 @@
 #pragma once
 
 #include "macros.h"
+#define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
 
 
 namespace engine
 {
+
 	class Window
 	{
 
@@ -26,6 +28,9 @@ namespace engine
 
 	public:
 		Window();
-
+		~Window();
+		void run(void (*MainLoop)());
+		bool isRunning();
 	};
+
 }
