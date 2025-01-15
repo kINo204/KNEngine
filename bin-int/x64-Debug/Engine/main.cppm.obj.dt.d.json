@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\workdir\\knengine\\knengine\\engine\\src\\core\\main.cppm",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\macros.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

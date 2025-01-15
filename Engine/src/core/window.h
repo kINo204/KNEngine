@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 #include "macros.h"
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
@@ -29,8 +31,7 @@ namespace engine
 	public:
 		Window();
 		~Window();
-		void run(void (*MainLoop)());
-		bool isRunning();
+		void run(std::function<void()> MainLoop);
 	};
 
 }

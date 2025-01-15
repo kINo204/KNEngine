@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.cppm.obj",
+            "outputs": [
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\vc143.pdb",
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\",
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.cppm.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "glm",
+                    "source-path": "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\glm\\glm.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

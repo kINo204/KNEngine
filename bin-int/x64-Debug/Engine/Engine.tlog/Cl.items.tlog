@@ -1,3 +1,6 @@
 D:\WorkDir\KNEngine\KNEngine\Engine\dep\gl.c;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\gl.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\scene\scene.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\scene.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\core\main.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\main.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\core\window.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\window.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\glm.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\glm.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\glm.cppm;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\glm.cppm.obj

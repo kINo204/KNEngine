@@ -1,10 +1,15 @@
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\vc143.pdb
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\vc143.idb
-d:\workdir\knengine\knengine\bin-int\x64-debug\engine\gl.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\window.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\main.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\gl.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.ifc
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.ifc.d.json
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.obj
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.dll
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.pdb
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.module.json
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.lib
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.exp
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.ilk
@@ -17,3 +22,6 @@ d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\link.command.1
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\link.read.1.tlog
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\link.secondary.1.tlog
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\link.write.1.tlog
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine_md.tlog\cl.command.1.tlog
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine_md.tlog\microsoft.build.cpptasks.cl.read.1.tlog
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine_md.tlog\microsoft.build.cpptasks.cl.write.1.tlog

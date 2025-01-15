@@ -1,0 +1,9 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\workdir\\knengine\\knengine\\engine\\src\\core\\main.h",
+        "ProvidedModule": "main",
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,6 +1,7 @@
 #include "window.h"
 
 #include <iostream>
+
 #include "glad/gl.h"
 
 
@@ -38,7 +39,7 @@ namespace engine
 		glfwDestroyWindow(this->glfw_window_);
 	}
 
-	void Window::run(void (*MainLoop)())
+	void Window::run(std::function<void()> MainLoop)
 	{
 		GLFWwindow* wnd = this->glfw_window_;
 		glfwMakeContextCurrent(wnd);

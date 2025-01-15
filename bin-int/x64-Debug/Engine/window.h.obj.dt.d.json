@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\workdir\\knengine\\knengine\\engine\\src\\core\\window.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\macros.h",
+            "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\glad\\gl.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\shared\\winapifamily.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\shared\\winpackagefamily.h",
+            "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\khr\\khrplatform.h",
+            "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\glfw\\glfw3.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\stddef.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt.h",
+            "d:\\ides\\microsoft visual studio\\vc\\tools\\msvc\\14.40.33807\\include\\vcruntime.h",
+            "d:\\ides\\microsoft visual studio\\vc\\tools\\msvc\\14.40.33807\\include\\sal.h",
+            "d:\\ides\\microsoft visual studio\\vc\\tools\\msvc\\14.40.33807\\include\\concurrencysal.h",
+            "d:\\ides\\microsoft visual studio\\vc\\tools\\msvc\\14.40.33807\\include\\vadefs.h",
+            "d:\\ides\\microsoft visual studio\\vc\\tools\\msvc\\14.40.33807\\include\\stdint.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
