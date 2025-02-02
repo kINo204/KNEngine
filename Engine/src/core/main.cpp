@@ -1,33 +1,40 @@
 #include "main.h"
-
-#include "window.h"
+#include <iostream>
 
 
 namespace engine
 {
-	ENGINE_API void Run()
-	{
-		BeforeRun();
+	std::unique_ptr<Game> Game::instance_ {nullptr};
 
-		{ // Brace for RAII.
-			Window main_window;
-
-			main_window.run([]{
-				// Main window loop.
-			}); 
+	Game& Game::GetInstance() {
+		if (instance_ == nullptr) {
+			instance_.reset(new Game());
 		}
-
-		AfterRun();
+		return *Game::instance_;
 	}
 
-	static void BeforeRun()
-	{
+	void Game::Init() {
 		Window::Init();
 	}
 
-	static void AfterRun()
-	{
+	void Game::Terminate() {
+		delete instance_.release();
 		Window::Terminate();
+	}
+
+	Game::Game() {
+		std::cout << "Creating Game" << std::endl;
+	}
+
+	void Game::run(std::function<void ()> GameLoop)
+	{
+		wnd.run([&] {
+			GameLoop();
+		});
+	}
+
+	Game::~Game() {
+		std::cout << "Destroying Game" << std::endl;
 	}
 
 }

@@ -19,6 +19,7 @@ namespace engine
 
 	void Window::Init()
 	{
+		std::cout << "Initializing Window" << std::endl;
 		glfwSetErrorCallback(GlfwErrorCallback);
 		glfwInit();
 		glfw_primary_monitor_ = glfwGetPrimaryMonitor();
@@ -26,16 +27,25 @@ namespace engine
 
 	void Window::Terminate()
 	{
+		std::cout << "Terminating Window" << std::endl;
 		glfwTerminate();
 	}
 
 	Window::Window()
 	{
+		std::cout << "Creating Window" << std::endl;
 		glfw_window_ = glfwCreateWindow(1024, 768, "Test Window", nullptr, nullptr);
+		if (glfw_window_ == nullptr)
+		{
+			std::cerr << "Failed to create GLFW window" << std::endl;
+			glfwTerminate();
+			exit(-1);
+		}
 	}
 
 	Window::~Window()
 	{
+		std::cout << "Destroying Window" << std::endl;
 		glfwDestroyWindow(this->glfw_window_);
 	}
 

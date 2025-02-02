@@ -4,14 +4,24 @@
   glm.cppm
   gl.c
   SceneNode.cpp
-  scene.cpp
 D:\WorkDir\KNEngine\KNEngine\Engine\src\scene\SceneNode.h(10,5): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“src/scene/SceneNode.cpp”)
   
+  scene.cpp
 D:\WorkDir\KNEngine\KNEngine\Engine\src\scene\SceneNode.h(10,5): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“src/scene/scene.cpp”)
   
   main.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\core\main.h(12,32): warning C4251: “engine::Game::instance_”:“std::unique_ptr<engine::Game,std::default_delete<engine::Game>>”需要有 dll 接口以供“engine::Game”的客户端使用
+  (编译源文件“src/core/main.cpp”)
+      D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\memory(3335,7):
+      参见“std::unique_ptr<engine::Game,std::default_delete<engine::Game>>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\core\main.h(20,10): warning C4251: “engine::Game::wnd”:“engine::Window”需要有 dll 接口以供“engine::Game”的客户端使用
+  (编译源文件“src/core/main.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\core\window.h(13,8):
+      参见“engine::Window”的声明
+  
   window.cpp
   glm.cpp
   正在生成代码...
