@@ -909,6 +909,9 @@
     <ClInclude Include="src\scene\scene.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\scene\SceneNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\window.cpp">
@@ -927,6 +930,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\scene\scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\SceneNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

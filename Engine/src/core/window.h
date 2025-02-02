@@ -30,7 +30,10 @@ namespace engine
 
 	public:
 		Window();
+		Window(const Window& wnd) = delete; // non-copyable resource handle
+		Window& operator=(const Window& wnd) = delete; // non-copyable resource handle
 		~Window();
+
 		void run(std::function<void()> MainLoop);
 	};
 

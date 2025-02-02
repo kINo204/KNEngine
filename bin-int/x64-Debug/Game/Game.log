@@ -1,1 +1,30 @@
-﻿
+﻿  Entity.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(587,18): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Entity.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(593,18): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Entity.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(604,51): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Entity.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(604,20): warning C4244: “初始化”: 从“double”转换到“const float”，可能丢失数据
+  (编译源文件“src/Entity.cpp”)
+  
+  Game.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(587,18): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Game.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(593,18): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Game.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(604,51): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“src/Game.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\include\linmath.h(604,20): warning C4244: “初始化”: 从“double”转换到“const float”，可能丢失数据
+  (编译源文件“src/Game.cpp”)
+  
+  正在生成代码...
+  Game.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Game\Game.exe
+  D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Game\..\Engine\Engine.dll
+  复制了 1 个文件

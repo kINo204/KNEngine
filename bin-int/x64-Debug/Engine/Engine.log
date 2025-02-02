@@ -1,1 +1,19 @@
-﻿
+﻿  正在扫描源以查找模块依赖项...
+  glm.cppm
+  正在编译...
+  glm.cppm
+  gl.c
+  SceneNode.cpp
+  scene.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\scene\SceneNode.h(10,5): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“src/scene/SceneNode.cpp”)
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\scene\SceneNode.h(10,5): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“src/scene/scene.cpp”)
+  
+  main.cpp
+  window.cpp
+  glm.cpp
+  正在生成代码...
+    正在创建库 D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.lib 和对象 D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.exp
+  Engine.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.dll

@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\scene\SceneNode.h" />
     <ClInclude Include="src\scene\scene.h" />
     <ClInclude Include="src\core\main.h" />
     <ClInclude Include="src\core\window.h" />
@@ -314,6 +315,7 @@
     <ClCompile Include="dep\gl.c">
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
+    <ClCompile Include="src\scene\SceneNode.cpp" />
     <ClCompile Include="src\scene\scene.cpp" />
     <ClCompile Include="src\core\main.cpp" />
     <ClCompile Include="src\core\window.cpp" />

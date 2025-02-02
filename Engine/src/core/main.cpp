@@ -9,18 +9,15 @@ namespace engine
 	{
 		BeforeRun();
 
-		// Run the main game window.
-		{
+		{ // Brace for RAII.
 			Window main_window;
-			main_window.run(MainLoop);
+
+			main_window.run([]{
+				// Main window loop.
+			}); 
 		}
 
 		AfterRun();
-	}
-
-	static void MainLoop()
-	{
-
 	}
 
 	static void BeforeRun()
