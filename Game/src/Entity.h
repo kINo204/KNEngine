@@ -5,5 +5,4 @@
 class Entity
 {
 private:
-	vec2 pos_;
 };

@@ -1,5 +1,5 @@
 #pragma once
 
-#include "linmath.h"
-#include "../core/main.h"
-#include "../core/window.h"
+#include "../game.h"
+
+#include "../graphics/scene.h"

@@ -906,10 +906,19 @@
     <ClInclude Include="src\include\glm\vector_relational.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\scene.h">
+    <ClInclude Include="src\graphics\scene.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\SceneNode.h">
+    <ClInclude Include="src\graphics\scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\objects\sprite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -920,7 +929,7 @@
     <ClCompile Include="dep\gl.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\main.cpp">
+    <ClCompile Include="src\game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\include\glm\detail\glm.cpp">
@@ -929,10 +938,10 @@
     <ClCompile Include="src\include\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\scene\scene.cpp">
+    <ClCompile Include="src\graphics\scene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\scene\SceneNode.cpp">
+    <ClCompile Include="src\graphics\objects\sprite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
