@@ -32,7 +32,8 @@ namespace engine
 		Window();
 		Window(const Window& wnd) = delete; // non-copyable resource handle
 		Window& operator=(const Window& wnd) = delete; // non-copyable resource handle
-		// TODO implement moving semantics.
+		//Window(Window&& wnd);
+		//Window& operator=(Window&& wnd);
 		~Window();
 
 		void run(std::function<void()> MainLoop);

@@ -3,7 +3,9 @@
 #include "macros.h"
 #include <vector>
 #include <memory>
+#include "renderable.h"
 #include "objects/sprite.h"
+#include "glm/mat3x3.hpp"
 
 namespace engine
 {
@@ -16,25 +18,30 @@ namespace engine
 	*/
 	class ENGINE_API SceneNode
 	{
+		friend class Renderer;
 	private:
 		SceneNode* parent = nullptr; // no ownership
 		std::vector<SceneNode> children;
 
+		glm::mat3x3 worldTransRelative = glm::mat3x3(1.0f); // Relative to parent.
+		glm::mat3x3 worldTrans = glm::mat3x3(1.0f); // Absolute world transformation, for calculation.
+		bool worldTransDirty = true;
+
 		// Object content.
-		Sprite* sprite = nullptr; // no ownership
+		Renderable* content = nullptr; // no ownership
 
 	public:
-		/* Generate an empty SceneNode. */
 		SceneNode() = default;
+
+		SceneNode(Renderable& content):
+			content(&content)
+		{}
+
 		SceneNode(const SceneNode& other) = default;
 		SceneNode& operator=(const SceneNode& other) = default;
+
 		SceneNode(SceneNode&& other) = default;
 		SceneNode& operator=(SceneNode&& other) = default;
-		~SceneNode() = default;
-
-		/* Generate a SceneNode with content. */
-		template<typename T>
-		SceneNode(T& content) : sprite(std::is_same_v<T, Sprite> ? (Sprite*)&content : nullptr) {}
 
 		void addChild(const SceneNode& child);
 	};

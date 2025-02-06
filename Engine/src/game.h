@@ -3,6 +3,7 @@
 #include "macros.h"
 
 #include "core/window.h"
+#include "graphics/renderer.h"
 #include "graphics/scene.h"
 
 namespace engine
@@ -18,18 +19,15 @@ namespace engine
 
 	private:
 		Window wnd;
+		Renderer renderer;
 		Scene* scene = nullptr;
 
-		Game();
-		Game(const Game& game) = delete;
-		Game& operator=(const Game& game) = delete;
+		Game() = default;
 
 	public:
-		~Game();
-
 		void run(std::function<void ()> GameLoop);
 
-		Scene& getScene();
+		Scene& getScene() const;
 		void setScene(Scene& scene);
 	};
 }
