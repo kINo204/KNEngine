@@ -22,22 +22,15 @@ namespace engine
 		Window::Terminate();
 	}
 
-	Game::Game() {
-		std::cout << "Creating Game" << std::endl;
-	}
-
 	void Game::run(std::function<void ()> GameLoop)
 	{
 		wnd.run([&] {
 			GameLoop();
+			renderer.renderScene(*scene);
 		});
 	}
 
-	Game::~Game() {
-		std::cout << "Destroying Game" << std::endl;
-	}
-
-	Scene& Game::getScene() {
+	Scene& Game::getScene() const {
 		return *scene;
 	}
 

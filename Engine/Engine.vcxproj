@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\renderable.h" />
+    <ClInclude Include="src\graphics\renderer.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\graphics\camera.h" />
     <ClInclude Include="src\graphics\objects\sprite.h" />
@@ -311,12 +313,15 @@
     <ClInclude Include="src\include\KHR\khrplatform.h" />
     <ClInclude Include="src\include\linmath.h" />
     <ClInclude Include="src\include\macros.h" />
+    <ClInclude Include="src\include\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dep\gl.c">
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
+    <ClCompile Include="dep\stb_image.cpp" />
     <ClCompile Include="src\graphics\objects\sprite.cpp" />
+    <ClCompile Include="src\graphics\renderer.cpp" />
     <ClCompile Include="src\graphics\scene.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\core\window.cpp" />
