@@ -16,7 +16,7 @@ int main()
 	scene.addChild(sprite);
 
 	game.run([] {
-		// Game Loop
+
 	});
 
 	Game::Terminate();

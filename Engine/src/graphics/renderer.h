@@ -4,8 +4,10 @@
 
 namespace engine {
 	class Renderer {
+	private:
+		void renderNode(const SceneNode& node) const;
+
 	public:
-		static void RenderSceneNode(const SceneNode& node);
 		void renderScene(const Scene& scene) const;
 	};
 }

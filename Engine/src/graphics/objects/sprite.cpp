@@ -6,7 +6,7 @@
 
 namespace engine
 {
-	Sprite::Sprite(const char* fileName) {
+	Sprite::Sprite(const char* fileName) : fileName(fileName) {
 		image = stbi_load(fileName, &width, &height, &nchannels, 0);
 		if (!image) {
 			throw std::runtime_error("[Creating Sprite] Failed to load image: " + std::string(fileName));	
@@ -14,13 +14,6 @@ namespace engine
 	}
 
 	Sprite::~Sprite() {
-		if (image) {
-			stbi_image_free(image);
-		}
-	}
-
-	void Sprite::render() {
-		// TODO render sprite.
-		std::cout << "Rendering sprite..." << std::endl;
+		if (image) { stbi_image_free(image); }
 	}
 }

@@ -3,7 +3,7 @@
 #include "macros.h"
 #include <vector>
 #include <memory>
-#include "renderable.h"
+#include "scene_object.h"
 #include "objects/sprite.h"
 #include "glm/mat3x3.hpp"
 
@@ -18,8 +18,6 @@ namespace engine
 	*/
 	class ENGINE_API SceneNode
 	{
-		friend class Renderer;
-
 	private:
 		SceneNode* parent = nullptr; // no ownership
 		std::vector<SceneNode> children;
@@ -29,14 +27,15 @@ namespace engine
 		bool worldTransDirty = true;
 
 		// Object content.
-		Renderable* content = nullptr; // no ownership
+		SceneObject* content = nullptr; // no ownership
 
 	public:
 		SceneNode() = default;
 
-		SceneNode(Renderable& content):
+		SceneNode(SceneObject& content):
 			content(&content)
-		{}
+		{
+		}
 
 		SceneNode(const SceneNode& other) = default;
 		SceneNode& operator=(const SceneNode& other) = default;

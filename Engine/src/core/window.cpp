@@ -3,6 +3,9 @@
 #include <iostream>
 
 #include "glad/gl.h"
+#include "../graphics/shader.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 
 namespace engine
@@ -21,6 +24,9 @@ namespace engine
 	{
 		glfwSetErrorCallback(GlfwErrorCallback);
 		glfwInit();
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfw_primary_monitor_ = glfwGetPrimaryMonitor();
 	}
 
@@ -49,9 +55,10 @@ namespace engine
 	{
 		GLFWwindow* wnd = this->glfw_window_;
 		glfwMakeContextCurrent(wnd);
-		gladLoadGL(glfwGetProcAddress);
-		glfwSwapInterval(1);
+		if (!gladLoadGL(glfwGetProcAddress)) throw std::runtime_error("Faild to load OpenGL!");
 
+		glViewport(0, 0, 1024, 768);
+		glfwSwapInterval(1);
 		while (!glfwWindowShouldClose(wnd))
 		{
 			MainLoop();
