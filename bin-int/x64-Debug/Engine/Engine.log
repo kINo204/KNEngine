@@ -1,4 +1,20 @@
-﻿  window.cpp
+﻿  正在扫描源以查找模块依赖项...
+  renderer.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(28,26): warning C4251: “engine::SceneNode::children”:“std::vector<engine::SceneNode,std::allocator<engine::SceneNode>>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/graphics/renderer.cpp”)
+      D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\vector(429,7):
+      参见“std::vector<engine::SceneNode,std::allocator<engine::SceneNode>>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(30,13): warning C4251: “engine::SceneNode::model_trans_rel_”:“glm::mat<4,4,float,glm::packed_highp>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/graphics/renderer.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_mat4x4.hpp(13,9):
+      参见“glm::mat<4,4,float,glm::packed_highp>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(31,13): warning C4251: “engine::SceneNode::model_trans_”:“glm::mat<4,4,float,glm::packed_highp>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/graphics/renderer.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_mat4x4.hpp(13,9):
+      参见“glm::mat<4,4,float,glm::packed_highp>”的声明
+  
   Engine.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.dll
   D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.dll
   复制了 1 个文件

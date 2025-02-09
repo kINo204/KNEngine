@@ -1,12 +1,18 @@
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\vc143.pdb
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\vc143.idb
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\gl.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.ifc
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.ifc.d.json
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\shader.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\window.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\game.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\scene.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\renderer.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\sprite.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\render_command.obj
+d:\workdir\knengine\knengine\bin-int\x64-debug\engine\mesh.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\stb_image.obj
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.dll
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.pdb
@@ -14,8 +20,6 @@ d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.module.json
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.lib
 d:\workdir\knengine\knengine\bin\x64-debug\engine\engine.exp
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.ilk
-d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.cppm.obj
-d:\workdir\knengine\knengine\bin-int\x64-debug\engine\glm.obj
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.vcxproj.filelistabsolute.txt
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\cl.command.1.tlog
 d:\workdir\knengine\knengine\bin-int\x64-debug\engine\engine.tlog\cl.items.tlog

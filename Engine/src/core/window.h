@@ -1,10 +1,10 @@
 #pragma once
 
-#include <functional>
-
 #include "macros.h"
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
+
+#include <functional>
 
 
 namespace engine
@@ -36,6 +36,7 @@ namespace engine
 		//Window& operator=(Window&& wnd);
 		~Window();
 
+		void use();
 		void run(std::function<void()> MainLoop);
 	};
 

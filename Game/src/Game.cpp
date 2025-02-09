@@ -12,7 +12,8 @@ int main()
 	engine::Scene scene;
 	game.setScene(scene);
 
-	engine::Sprite sprite;
+	engine::Sprite sprite{"wall.jpg"};
+	// May create multiple sprites of the same content.
 	scene.addChild(sprite);
 
 	game.run([] {

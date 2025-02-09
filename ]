@@ -1,0 +1,47 @@
+#pragma once
+
+#include "macros.h"
+#include <vector>
+#include <memory>
+#include "scene_object.h"
+#include "objects/sprite.h"
+#include "glm/mat4x4.hpp"
+
+namespace engine
+{
+
+	/*
+	SceneNode is responsible for building up the framework of the scene, providing
+	the transformation matrices hierarchy. Various contents are attached to the
+	framework, such as sprites, geometries, light, camera, etc, to provide actual
+	rendering details.
+	*/
+	class ENGINE_API SceneNode
+	{
+	private:
+		SceneNode* parent = nullptr; // no ownership
+		std::vector<SceneNode> children;
+
+		glm::mat4 model_trans_rel_ = glm::mat4(1.0f); // Relative to parent.
+		glm::mat4 model_trans_ = glm::mat4(1.0f); // Absolute world transformation, for calculation.
+		bool model_trans_dirty_ = true;
+
+		// Object content.
+		SceneObject* content = nullptr; // no ownership
+
+	public:
+		SceneNode() = default;
+		SceneNode(SceneObject& content):
+			content(&content) { }
+		SceneNode(const SceneNode& other) = default;
+		SceneNode& operator=(const SceneNode& other) = default;
+		SceneNode(SceneNode&& other) = default;
+		SceneNode& operator=(SceneNode&& other) = default;
+
+		void addChild(const SceneNode& child);
+		void updateModelTransRecursive(bool parent_trans_dirty = false);
+	};
+
+	using Scene = SceneNode;
+
+}

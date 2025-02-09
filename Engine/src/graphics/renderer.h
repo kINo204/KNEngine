@@ -1,13 +1,20 @@
 #pragma once
 
 #include "scene.h"
+#include "shader.h"
+
+#include <memory>
+
 
 namespace engine {
-	class Renderer {
-	private:
-		void renderNode(const SceneNode& node) const;
 
+	class Renderer {
+		// Define default shaders.
 	public:
-		void renderScene(const Scene& scene) const;
+		static std::shared_ptr<Shader> SHADER_SPRITE_DEFAULT;
+		static void Init();
+
+		void renderScene(Scene& scene);
 	};
+
 }

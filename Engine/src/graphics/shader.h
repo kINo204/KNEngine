@@ -1,6 +1,7 @@
 #pragma once
 
 #include "macros.h"
+
 #include "glad/gl.h"
 #include "glm/glm.hpp"
 

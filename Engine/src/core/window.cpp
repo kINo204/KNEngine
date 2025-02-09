@@ -1,11 +1,12 @@
 #include "window.h"
 
-#include <iostream>
+#include "../graphics/renderer.h"
 
 #include "glad/gl.h"
-#include "../graphics/shader.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+
+#include <iostream>
 
 
 namespace engine
@@ -51,18 +52,19 @@ namespace engine
 		glfwDestroyWindow(this->glfw_window_);
 	}
 
+	void Window::use() {
+		glfwMakeContextCurrent(glfw_window_);
+		if (!gladLoadGL(glfwGetProcAddress)) throw std::runtime_error("Faild to load OpenGL!");
+	}
+
 	void Window::run(std::function<void()> MainLoop)
 	{
-		GLFWwindow* wnd = this->glfw_window_;
-		glfwMakeContextCurrent(wnd);
-		if (!gladLoadGL(glfwGetProcAddress)) throw std::runtime_error("Faild to load OpenGL!");
-
 		glViewport(0, 0, 1024, 768);
 		glfwSwapInterval(1);
-		while (!glfwWindowShouldClose(wnd))
+		while (!glfwWindowShouldClose(glfw_window_))
 		{
 			MainLoop();
-			glfwSwapBuffers(wnd);
+			glfwSwapBuffers(glfw_window_);
 			glfwPollEvents();
 		}
 	}

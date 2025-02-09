@@ -1,4 +1,5 @@
 #include "game.h"
+ 
 #include <iostream>
 
 
@@ -7,14 +8,14 @@ namespace engine
 	Game* Game::instance_ {nullptr};
 
 	Game& Game::GetInstance() {
-		if (instance_ == nullptr) {
-			instance_ = new Game();
-		}
 		return *Game::instance_;
 	}
 
 	void Game::Init() {
 		Window::Init();
+		instance_ = new Game();
+		instance_->wnd.use();
+		Renderer::Init();
 	}
 
 	void Game::Terminate() {
