@@ -1,4 +1,40 @@
-﻿  Game.cpp
+﻿  Entity.cpp
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(28,26): warning C4251: “engine::SceneNode::children”:“std::vector<engine::SceneNode,std::allocator<engine::SceneNode>>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\vector(429,7):
+      参见“std::vector<engine::SceneNode,std::allocator<engine::SceneNode>>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(30,13): warning C4251: “engine::SceneNode::model_trans_rel_”:“glm::mat<4,4,float,glm::packed_highp>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_mat4x4.hpp(13,9):
+      参见“glm::mat<4,4,float,glm::packed_highp>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(31,13): warning C4251: “engine::SceneNode::model_trans_”:“glm::mat<4,4,float,glm::packed_highp>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_mat4x4.hpp(13,9):
+      参见“glm::mat<4,4,float,glm::packed_highp>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\game.h(21,10): warning C4251: “engine::Game::wnd”:“engine::Window”需要有 dll 接口以供“engine::Game”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\core\window.h(13,8):
+      参见“engine::Window”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(22,32): warning C4251: “engine::Sprite::mesh”:“std::unique_ptr<engine::MeshElement,std::default_delete<engine::MeshElement>>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\memory(3335,7):
+      参见“std::unique_ptr<engine::MeshElement,std::default_delete<engine::MeshElement>>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(23,27): warning C4251: “engine::Sprite::shader”:“std::shared_ptr<engine::Shader>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\memory(1560,7):
+      参见“std::shared_ptr<engine::Shader>”的声明
+  
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(26,13): warning C4251: “engine::Sprite::anchor”:“glm::vec<2,float,glm::packed_highp>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+  (编译源文件“src/Entity.cpp”)
+      D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_vec2.hpp(17,9):
+      参见“glm::vec<2,float,glm::packed_highp>”的声明
+  
+  Game.cpp
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.h(28,26): warning C4251: “engine::SceneNode::children”:“std::vector<engine::SceneNode,std::allocator<engine::SceneNode>>”需要有 dll 接口以供“engine::SceneNode”的客户端使用
   (编译源文件“src/Game.cpp”)
       D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\vector(429,7):
@@ -19,19 +55,20 @@ D:\WorkDir\KNEngine\KNEngine\Engine\src\game.h(21,10): warning C4251: “engine:
       D:\WorkDir\KNEngine\KNEngine\Engine\src\core\window.h(13,8):
       参见“engine::Window”的声明
   
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(21,32): warning C4251: “engine::Sprite::mesh”:“std::unique_ptr<engine::MeshElement,std::default_delete<engine::MeshElement>>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(22,32): warning C4251: “engine::Sprite::mesh”:“std::unique_ptr<engine::MeshElement,std::default_delete<engine::MeshElement>>”需要有 dll 接口以供“engine::Sprite”的客户端使用
   (编译源文件“src/Game.cpp”)
       D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\memory(3335,7):
       参见“std::unique_ptr<engine::MeshElement,std::default_delete<engine::MeshElement>>”的声明
   
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(22,27): warning C4251: “engine::Sprite::shader”:“std::shared_ptr<engine::Shader>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(23,27): warning C4251: “engine::Sprite::shader”:“std::shared_ptr<engine::Shader>”需要有 dll 接口以供“engine::Sprite”的客户端使用
   (编译源文件“src/Game.cpp”)
       D:\IDEs\Microsoft Visual Studio\VC\Tools\MSVC\14.42.34433\include\memory(1560,7):
       参见“std::shared_ptr<engine::Shader>”的声明
   
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(25,13): warning C4251: “engine::Sprite::anchor”:“glm::vec<2,float,glm::packed_highp>”需要有 dll 接口以供“engine::Sprite”的客户端使用
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(26,13): warning C4251: “engine::Sprite::anchor”:“glm::vec<2,float,glm::packed_highp>”需要有 dll 接口以供“engine::Sprite”的客户端使用
   (编译源文件“src/Game.cpp”)
       D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_vec2.hpp(17,9):
       参见“glm::vec<2,float,glm::packed_highp>”的声明
   
+  正在生成代码...
   Game.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Game\Game.exe

@@ -1,6 +1,7 @@
 #include "sprite.h"
 
 #include "stb_image.h"
+#include "glm/gtc/matrix_transform.hpp"
 
 #include <iostream>
 #include <string>
@@ -12,7 +13,6 @@ namespace engine
 	Sprite::Sprite(const char* fileName)
 	{
 		// Load the texture image.
-		int width, height, nchannels;
 		image = stbi_load(fileName, &width, &height, &nchannels, 0);
 		if (!image) {
 			throw std::runtime_error("[Creating Sprite] Failed to load image: " + std::string(fileName));
@@ -35,9 +35,13 @@ namespace engine
 		if (image) { stbi_image_free(image); }
 	}
 
-	void Sprite::render(const glm::mat4& proj) {
+	void Sprite::render(const glm::mat4& proj, const glm::mat4& model) {
 		shader->use();
 		shader->setMat4("proj", proj);
+		shader->setMat4("model", model);
+		glm::mat4 anchor = glm::translate(glm::mat4(1.f),
+			glm::vec3(-this->anchor[0] * width, -this->anchor[1] * height, 0.f));
+		shader->setMat4("anchor", anchor);
 		mesh->use();
 		mesh->draw();
 		mesh->disuse();

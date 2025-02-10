@@ -14,7 +14,12 @@ int main()
 
 	engine::Sprite sprite{"wall.jpg"};
 	// May create multiple sprites of the same content.
-	scene.addChild(sprite);
+	auto& node = scene.addChild(sprite);
+	node.translate(800, 1000);
+	node.rotate(45);
+	node.translate(1600, 0);
+	node.rotate(25);
+	node.translate(400, 200);
 
 	game.run([] {
 

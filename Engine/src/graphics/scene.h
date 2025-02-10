@@ -42,8 +42,11 @@ namespace engine
 		SceneNode(SceneNode&& other) = default;
 		SceneNode& operator=(SceneNode&& other) = default;
 
-		void addChild(Renderable& child);
+		SceneNode& addChild(Renderable& child);
 		void updateModelTransRecursive(bool parent_trans_dirty = false);
+		void render(const glm::mat4& proj);
+		void translate(float trans_x, float trans_y);
+		void rotate(float angle);
 	};
 
 	using Scene = SceneNode;

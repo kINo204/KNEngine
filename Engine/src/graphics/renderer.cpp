@@ -12,8 +12,10 @@ namespace engine {
 			"#version 330 core\n"
 			"layout (location = 0) in vec3 aPos;\n"
 			"uniform mat4x4 proj;\n"
+			"uniform mat4x4 model;\n"
+			"uniform mat4x4 anchor;\n"
 			"void main() {\n"
-			"gl_Position = proj * vec4(vec3(aPos), 1.0);\n"
+			"gl_Position = proj * model * anchor * vec4(vec3(aPos), 1.0);\n"
 			"}\n",
 			"#version 330 core\n"
 			"out vec4 FragColor;\n"
@@ -29,6 +31,7 @@ namespace engine {
 
 		// TODO Register a camera.
 		// TODO Build ortho matrix.
+		glm::mat4 proj = glm::ortho(0.f, 4000.f, 0.f, 3000.f);
 
 		// Sort renderable objects by shader programs.
 		std::vector<SceneNode*> sequence;
@@ -38,9 +41,8 @@ namespace engine {
 				sequence.push_back(&child);
 		}
 
-		glm::mat4 proj = glm::ortho(0.f, 4000.f, 0.f, 3000.f);
 		for (auto node : sequence) {
-			if (node->content) node->content->render(proj);
+			node->render(proj);
 		}
 	}
 
