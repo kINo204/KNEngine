@@ -27,10 +27,9 @@ namespace engine {
 		glm::vec2 anchor = { 0.5f, 0.5f };
 
 	public:
-		Sprite() = default;
 		Sprite(const char* fileName);
 
-		void render(const glm::mat4& proj, const glm::mat4& model) override;
+		void render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) override;
 		void setAnchor(float x, float y) { anchor = { x, y }; }
 	};
 

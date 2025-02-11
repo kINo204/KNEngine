@@ -1,5 +1,7 @@
 #include "renderer.h"
 
+#include "../game.h"
+
 #include "glm/gtc/matrix_transform.hpp"
 
 
@@ -14,10 +16,11 @@ namespace engine {
 			"layout (location = 1) in vec2 aTex;\n"
 			"out vec2 TexCoord;\n"
 			"uniform mat4x4 proj;\n"
+			"uniform mat4x4 view;\n"
 			"uniform mat4x4 model;\n"
 			"uniform mat4x4 anchor;\n"
 			"void main() {\n"
-			"gl_Position = proj * model * anchor * vec4(vec3(aPos), 1.0);\n"
+			"gl_Position = proj * view * model * anchor * vec4(vec3(aPos), 1.0);\n"
 			"TexCoord = aTex;\n"
 			"}\n",
 
@@ -38,19 +41,21 @@ namespace engine {
 		scene.updateModelTransRecursive();
 
 		// TODO Register a camera.
+		glm::mat4 view = glm::inverse(Game::GetInstance().getCamera().model_trans);
+
 		// TODO Build ortho matrix.
 		glm::mat4 proj = glm::ortho(0.f, 4000.f, 0.f, 3000.f);
 
 		// Sort renderable objects by shader programs.
-		std::vector<SceneNode*> sequence;
-		sequence.push_back(&scene);
+		std::vector<std::shared_ptr<SceneNode>> sequence;
+		for (auto node : scene.children) sequence.push_back(node);
 		for (int i = 0; i < sequence.size(); i++) {
 			for (auto& child : sequence[i]->children)
-				sequence.push_back(&child);
+				sequence.push_back(child);
 		}
 
-		for (auto node : sequence) {
-			node->render(proj);
+		for (auto& node : sequence) {
+			node->render(proj, view);
 		}
 	}
 

@@ -15,7 +15,7 @@ namespace engine
 
 	/* Static */
 	private:
-		static GLFWmonitor* glfw_primary_monitor_; // Used for fullscreen mode.
+		static GLFWmonitor* GLFW_PRIMARY_MONITOR; // Used for fullscreen mode.
 
 	public:
 		static void Init();
@@ -26,7 +26,7 @@ namespace engine
 
 	/* Members */
 	private:
-		GLFWwindow* glfw_window_ = nullptr;
+		GLFWwindow* glfw_window = nullptr;
 
 	public:
 		Window();

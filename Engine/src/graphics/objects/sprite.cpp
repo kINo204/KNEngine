@@ -33,7 +33,7 @@ namespace engine
 		);
 	}
 
-    void Sprite::render(const glm::mat4& proj, const glm::mat4& model) {
+    void Sprite::render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) {
 		glm::mat4 anchor = glm::translate(glm::mat4(1.f),
 			glm::vec3(-this->anchor[0] * width, -this->anchor[1] * height, 0.f));
 
@@ -41,6 +41,7 @@ namespace engine
 
 		shader->use();
 		shader->setMat4("proj", proj);
+		shader->setMat4("view", view);
 		shader->setMat4("model", model);
 		shader->setMat4("anchor", anchor);
 		shader->setInt("Tex", 0); // 设置shader uniform变量以使用texture
