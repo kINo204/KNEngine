@@ -10,7 +10,7 @@ namespace engine {
 		int index; // Starting from 0.
 
 	public:
-		Texture(int tex_index, unsigned char data[], int width, int height);
+		Texture(int tex_index, unsigned char data[], int width, int height, int nchannels);
 		~Texture();
 		void use();
 		void disuse();

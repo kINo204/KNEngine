@@ -1,5 +1,7 @@
 #include "game.h"
  
+#include "stb_image.h"
+
 #include <iostream>
 
 
@@ -12,6 +14,7 @@ namespace engine
 	}
 
 	void Game::Init() {
+		stbi_set_flip_vertically_on_load(true);
 		Window::Init();
 		INSTANCE = new Game();
 		INSTANCE->wnd.use();

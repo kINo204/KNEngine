@@ -18,6 +18,8 @@
     <ClCompile Include="src\Game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="circ.png" />
+    <Image Include="face.png" />
     <Image Include="wall.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

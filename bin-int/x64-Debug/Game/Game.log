@@ -44,6 +44,6 @@ D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\objects\sprite.h(27,13): warnin
       D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\type_vec2.hpp(17,9):
       参见“glm::vec<2,float,glm::packed_highp>”的声明
   
-D:\WorkDir\KNEngine\KNEngine\Game\src\Game.cpp(25,22): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Game\src\Game.cpp(27,20): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\WorkDir\KNEngine\KNEngine\Game\src\Game.cpp(22,22): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\WorkDir\KNEngine\KNEngine\Game\src\Game.cpp(24,20): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
   Game.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Game\Game.exe

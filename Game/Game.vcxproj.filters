@@ -31,5 +31,11 @@
     <Image Include="wall.jpg">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="face.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="circ.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

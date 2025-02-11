@@ -12,12 +12,9 @@ int main()
 	engine::Scene scene;
 	game.setScene(scene);
 
-	engine::Sprite sprite{"wall.jpg"};
+	engine::Sprite sprite{"circ.png"};
 	// May create multiple sprites of the same content.
 	engine::Node n1 = scene.addChild(sprite);
-	engine::Node n2 = n1->addChild(sprite);
-	n2->rotate(45);
-	//engine::Node camera = scene.addChild();
 	engine::Node camera = scene.addChild();
 	game.setCamera(camera);
 

@@ -2,14 +2,19 @@
 
 namespace engine {
 
-	Texture::Texture(int tex_index, unsigned char data[], int width, int height) :
+	Texture::Texture(int tex_index, unsigned char data[], int width, int height, int nchannels) :
 		index{tex_index}
 	{
 		glGenTextures(1, &txo);
 		glActiveTexture(GL_TEXTURE0 + index);
 		glBindTexture(GL_TEXTURE_2D, txo);
 
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		GLuint channel = 0;
+		if (nchannels == 1) { channel = GL_RED; }
+		else if (nchannels == 3) { channel = GL_RGB; }
+		else if (nchannels == 4) { channel = GL_RGBA; }
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, channel, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);

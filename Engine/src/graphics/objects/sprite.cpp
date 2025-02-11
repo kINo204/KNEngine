@@ -17,7 +17,7 @@ namespace engine
 		if (!image) {
 			throw std::runtime_error("[Creating Sprite] Failed to load image: " + std::string(fileName));
 		}
-		texture = std::make_unique<Texture>(0, image, width, height);
+		texture = std::make_unique<Texture>(0, image, width, height, nchannels);
 		stbi_image_free(image);
 
 		// Setup mesh object.
