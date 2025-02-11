@@ -30,9 +30,6 @@
     <ClInclude Include="src\graphics\scene.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\game.h">
       <Filter>头文件</Filter>
     </ClInclude>

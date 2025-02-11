@@ -20,7 +20,7 @@ namespace engine
 		exit(-1);
 	}
 
-	GLFWmonitor* Window::glfw_primary_monitor_ = nullptr;
+	GLFWmonitor* Window::GLFW_PRIMARY_MONITOR = nullptr;
 
 	void Window::Init()
 	{
@@ -29,7 +29,7 @@ namespace engine
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-		glfw_primary_monitor_ = glfwGetPrimaryMonitor();
+		GLFW_PRIMARY_MONITOR = glfwGetPrimaryMonitor();
 	}
 
 	void Window::Terminate()
@@ -39,8 +39,8 @@ namespace engine
 
 	Window::Window()
 	{
-		glfw_window_ = glfwCreateWindow(1024, 768, "Test Window", nullptr, nullptr);
-		if (glfw_window_ == nullptr)
+		glfw_window = glfwCreateWindow(1024, 768, "Test Window", nullptr, nullptr);
+		if (glfw_window == nullptr)
 		{
 			std::cerr << "Failed to create GLFW window" << std::endl;
 			glfwTerminate();
@@ -50,11 +50,11 @@ namespace engine
 
 	Window::~Window()
 	{
-		glfwDestroyWindow(this->glfw_window_);
+		glfwDestroyWindow(this->glfw_window);
 	}
 
 	void Window::use() {
-		glfwMakeContextCurrent(glfw_window_);
+		glfwMakeContextCurrent(glfw_window);
 		if (!gladLoadGL(glfwGetProcAddress)) throw std::runtime_error("Faild to load OpenGL!");
 	}
 
@@ -62,10 +62,10 @@ namespace engine
 	{
 		glViewport(0, 0, 1024, 768);
 		glfwSwapInterval(1);
-		while (!glfwWindowShouldClose(glfw_window_))
+		while (!glfwWindowShouldClose(glfw_window))
 		{
 			MainLoop();
-			glfwSwapBuffers(glfw_window_);
+			glfwSwapBuffers(glfw_window);
 			glfwPollEvents();
 		}
 	}

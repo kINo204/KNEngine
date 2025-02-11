@@ -6,6 +6,6 @@ namespace engine
 {
 	class Renderable {
 	public:
-		virtual void render(const glm::mat4&proj, const glm::mat4& model) = 0;
+		virtual void render(const glm::mat4&proj, const glm::mat4& view, const glm::mat4& model) = 0;
 	};
 }

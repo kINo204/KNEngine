@@ -14,7 +14,7 @@ namespace engine
 	void Game::Init() {
 		Window::Init();
 		INSTANCE = new Game();
-		INSTANCE->wnd_.use();
+		INSTANCE->wnd.use();
 		Renderer::Init();
 	}
 
@@ -25,25 +25,16 @@ namespace engine
 
 	void Game::run(std::function<void ()> GameLoop)
 	{
-		wnd_.run([&] {
+		wnd.run([&] {
 			updateTime();
 			GameLoop();
-			renderer_.renderScene(*scene_);
+			renderer.renderScene(*scene);
 		});
 	}
 
 	void Game::updateTime() {
 		double time = glfwGetTime();
-		time_delta_ = time - time_last_frame_;
-		time_last_frame_ = time;
+		time_delta = time - time_last_frame;
+		time_last_frame = time;
 	}
-
-	Scene& Game::getScene() const {
-		return *scene_;
-	}
-
-	void Game::setScene(Scene& scene) {
-		this->scene_ = &scene;
-	}
-
 }
