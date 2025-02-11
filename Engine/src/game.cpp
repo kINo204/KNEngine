@@ -5,38 +5,45 @@
 
 namespace engine
 {
-	Game* Game::instance_ {nullptr};
+	Game* Game::INSTANCE {nullptr};
 
 	Game& Game::GetInstance() {
-		return *Game::instance_;
+		return *Game::INSTANCE;
 	}
 
 	void Game::Init() {
 		Window::Init();
-		instance_ = new Game();
-		instance_->wnd.use();
+		INSTANCE = new Game();
+		INSTANCE->wnd_.use();
 		Renderer::Init();
 	}
 
 	void Game::Terminate() {
-		delete instance_;
+		delete INSTANCE;
 		Window::Terminate();
 	}
 
 	void Game::run(std::function<void ()> GameLoop)
 	{
-		wnd.run([&] {
+		wnd_.run([&] {
+			updateTime();
 			GameLoop();
-			renderer.renderScene(*scene);
+			renderer_.renderScene(*scene_);
 		});
 	}
 
+	void Game::updateTime() {
+		double time = glfwGetTime();
+		time_delta_ = time - time_last_frame_;
+		time_last_frame_ = time;
+	}
+
 	Scene& Game::getScene() const {
-		return *scene;
+		return *scene_;
 	}
 
 	void Game::setScene(Scene& scene) {
-		this->scene = &scene;
+		this->scene_ = &scene;
 	}
 
 }

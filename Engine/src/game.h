@@ -10,7 +10,7 @@ namespace engine
 {
 	class ENGINE_API Game {
 	private:
-		static Game* instance_;
+		static Game* INSTANCE;
 
 	public:
 		static Game& GetInstance();
@@ -18,15 +18,18 @@ namespace engine
 		static void Terminate();
 
 	private:
-		Window wnd;
-		Renderer renderer;
-		Scene* scene = nullptr;
+		double time_delta_ = 0.0, time_last_frame_ = 0.0;
+		Window wnd_;
+		Renderer renderer_;
+		Scene* scene_ = nullptr;
 
 		Game() = default;
 
 	public:
 		void run(std::function<void ()> GameLoop);
 
+		void updateTime();
+		double getDeltaTime() { return time_delta_; }
 		Scene& getScene() const;
 		void setScene(Scene& scene);
 	};

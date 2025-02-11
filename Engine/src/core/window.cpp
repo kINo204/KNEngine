@@ -1,6 +1,7 @@
 #include "window.h"
 
 #include "../graphics/renderer.h"
+#include "../game.h"
 
 #include "glad/gl.h"
 #include "glm/glm.hpp"

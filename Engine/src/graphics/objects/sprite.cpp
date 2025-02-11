@@ -13,10 +13,12 @@ namespace engine
 	Sprite::Sprite(const char* fileName)
 	{
 		// Load the texture image.
-		image = stbi_load(fileName, &width, &height, &nchannels, 0);
+		unsigned char* image = stbi_load(fileName, &width, &height, &nchannels, 0);
 		if (!image) {
 			throw std::runtime_error("[Creating Sprite] Failed to load image: " + std::string(fileName));
 		}
+		texture = std::make_unique<Texture>(0, image, width, height);
+		stbi_image_free(image);
 
 		// Setup mesh object.
 		mesh = std::make_unique<MeshElement>(
@@ -31,20 +33,24 @@ namespace engine
 		);
 	}
 
-	Sprite::~Sprite() {
-		if (image) { stbi_image_free(image); }
-	}
+    void Sprite::render(const glm::mat4& proj, const glm::mat4& model) {
+		glm::mat4 anchor = glm::translate(glm::mat4(1.f),
+			glm::vec3(-this->anchor[0] * width, -this->anchor[1] * height, 0.f));
 
-	void Sprite::render(const glm::mat4& proj, const glm::mat4& model) {
+		texture->use();
+
 		shader->use();
 		shader->setMat4("proj", proj);
 		shader->setMat4("model", model);
-		glm::mat4 anchor = glm::translate(glm::mat4(1.f),
-			glm::vec3(-this->anchor[0] * width, -this->anchor[1] * height, 0.f));
 		shader->setMat4("anchor", anchor);
+		shader->setInt("Tex", 0); // 设置shader uniform变量以使用texture
+
 		mesh->use();
+
 		mesh->draw();
+
 		mesh->disuse();
+		texture->disuse();
 	}
 
 }

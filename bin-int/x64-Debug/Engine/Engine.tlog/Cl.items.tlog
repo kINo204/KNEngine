@@ -8,5 +8,6 @@ D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\scene.cpp;D:\WorkDir\KNEngine\K
 D:\WorkDir\KNEngine\KNEngine\Engine\src\game.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\game.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\core\window.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\window.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\shader.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\shader.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\texture.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\texture.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\detail\glm.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\glm.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\include\glm\glm.cppm;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\glm.cppm.obj

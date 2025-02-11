@@ -21,6 +21,7 @@
     <ClInclude Include="src\graphics\scene.h" />
     <ClInclude Include="src\core\window.h" />
     <ClInclude Include="src\graphics\shader.h" />
+    <ClInclude Include="src\graphics\texture.h" />
     <ClInclude Include="src\include\client.h" />
     <ClInclude Include="src\include\glm\common.hpp" />
     <ClInclude Include="src\include\glm\detail\compute_common.hpp" />
@@ -323,6 +324,7 @@
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\core\window.cpp" />
     <ClCompile Include="src\graphics\shader.cpp" />
+    <ClCompile Include="src\graphics\texture.cpp" />
     <ClCompile Include="src\include\glm\detail\glm.cpp" />
     <ClCompile Include="src\include\glm\glm.cppm" />
   </ItemGroup>

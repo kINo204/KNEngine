@@ -11,21 +11,29 @@ namespace engine {
 		Renderer::SHADER_SPRITE_DEFAULT = std::make_shared<Shader>(
 			"#version 330 core\n"
 			"layout (location = 0) in vec3 aPos;\n"
+			"layout (location = 1) in vec2 aTex;\n"
+			"out vec2 TexCoord;\n"
 			"uniform mat4x4 proj;\n"
 			"uniform mat4x4 model;\n"
 			"uniform mat4x4 anchor;\n"
 			"void main() {\n"
 			"gl_Position = proj * model * anchor * vec4(vec3(aPos), 1.0);\n"
+			"TexCoord = aTex;\n"
 			"}\n",
+
 			"#version 330 core\n"
+			"in vec2 TexCoord;\n"
 			"out vec4 FragColor;\n"
+			"uniform sampler2D Tex;\n"
 			"void main() {\n"
-			"    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+			"    FragColor = texture(Tex, TexCoord);\n"
 			"}\n"
 		);
 	}
 
 	void Renderer::renderScene(Scene& scene) {
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		// Update nodes' model transitions.
 		scene.updateModelTransRecursive();
 

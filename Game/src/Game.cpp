@@ -14,15 +14,14 @@ int main()
 
 	engine::Sprite sprite{"wall.jpg"};
 	// May create multiple sprites of the same content.
-	auto& node = scene.addChild(sprite);
-	node.translate(800, 1000);
-	node.rotate(45);
-	node.translate(1600, 0);
-	node.rotate(25);
-	node.translate(400, 200);
+	auto& n1 = scene.addChild(sprite);
+	auto& n2 = scene.addChild(sprite);
 
-	game.run([] {
-
+	game.run([&] {
+		float trans_amount = 512 * game.getDeltaTime();
+		n2.translate(trans_amount, trans_amount);
+		float rot_amount = 90 * game.getDeltaTime();
+		n2.rotate(rot_amount);
 	});
 
 	Game::Terminate();

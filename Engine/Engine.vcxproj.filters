@@ -918,6 +918,9 @@
     <ClInclude Include="src\include\glm\vector_relational.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\graphics\texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\window.cpp">
@@ -954,6 +957,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\include\glm\glm.cppm">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
