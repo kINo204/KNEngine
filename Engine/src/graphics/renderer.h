@@ -9,8 +9,8 @@
 namespace engine {
 
 	class Renderer {
-		// Define default shaders.
 	public:
+		// Define default shaders.
 		static std::shared_ptr<Shader> SHADER_SPRITE_DEFAULT;
 		static void Init();
 

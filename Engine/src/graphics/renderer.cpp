@@ -56,7 +56,9 @@ namespace engine {
 		}
 
 		for (auto& node : sequence) {
-			node->render(proj, view);
+			if (node->renderable) {
+				node->renderable->render(proj, view, node->model_trans);
+			}
 		}
 	}
 

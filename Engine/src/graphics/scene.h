@@ -35,11 +35,11 @@ namespace engine
 		bool model_trans_dirty = true;
 
 		// Object content.
-		Renderable* content = nullptr; // no ownership
+		Renderable* renderable = nullptr; // no ownership
 
 	public:
 		SceneNode() = default;
-		SceneNode(Renderable& content) : content(&content) {};
+		SceneNode(Renderable& renderable) : renderable(&renderable) {};
 		SceneNode(const SceneNode& other) = default;
 		SceneNode& operator=(const SceneNode& other) = default;
 		SceneNode(SceneNode&& other) = default;
@@ -48,7 +48,6 @@ namespace engine
 		std::shared_ptr<SceneNode> addChild();
 		std::shared_ptr<SceneNode> addChild(Renderable& child);
 		void updateModelTransRecursive(bool parent_trans_dirty = false);
-		void render(const glm::mat4& proj, const glm::mat4& view);
 		void translate(float trans_x, float trans_y);
 		void rotate(float angle);
 	};

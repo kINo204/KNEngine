@@ -44,12 +44,6 @@ namespace engine {
 		}
 	}
 
-	void SceneNode::render(const glm::mat4& proj, const glm::mat4& view) {
-		if (content) {
-			content->render(proj, view, model_trans);
-		}
-	}
-
 	void SceneNode::translate(float trans_x, float trans_y) {
 		glm::mat4 m = glm::translate(glm::mat4(1.f), glm::vec3(trans_x, trans_y, 0.f));
 		model_trans_rel = m * model_trans_rel;
