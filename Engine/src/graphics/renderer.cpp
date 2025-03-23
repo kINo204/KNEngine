@@ -40,11 +40,12 @@ namespace engine {
 		// Update nodes' model transitions.
 		scene.updateModelTransRecursive();
 
+		// TODO Build ortho matrix.
+		// Note: Ensure the center point to be (0,0) for view trans to work properly!
+		glm::mat4 proj = glm::ortho(-4000.f, 4000.f, -3000.f, 3000.f);
+
 		// TODO Register a camera.
 		glm::mat4 view = glm::inverse(Game::GetInstance().getCamera().model_trans);
-
-		// TODO Build ortho matrix.
-		glm::mat4 proj = glm::ortho(0.f, 4000.f, 0.f, 3000.f);
 
 		// Sort renderable objects by shader programs.
 		std::vector<std::shared_ptr<SceneNode>> sequence;

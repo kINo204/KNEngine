@@ -1,9 +1,22 @@
 {
-    "Version": "1.1",
-    "Data": {
-        "Source": "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\glm\\glm.cppm",
-        "ProvidedModule": "glm",
-        "ImportedModules": [],
-        "ImportedHeaderUnits": []
-    }
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.obj",
+            "outputs": [
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.cppm.ifc.dt.module.json",
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.cppm.ifc.dt.d.json",
+                "D:\\WorkDir\\KNEngine\\KNEngine\\bin-int\\x64-Debug\\Engine\\glm.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "glm",
+                    "source-path": "d:\\workdir\\knengine\\knengine\\engine\\src\\include\\glm\\glm.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
 }

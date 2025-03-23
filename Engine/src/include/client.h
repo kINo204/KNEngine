@@ -3,4 +3,4 @@
 #include "../game.h"
 
 #include "../graphics/scene.h"
-#include "../graphics/objects/sprite.h"
+#include "../graphics/renderables/sprite.h"

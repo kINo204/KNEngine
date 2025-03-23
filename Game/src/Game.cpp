@@ -12,16 +12,16 @@ int main()
 	engine::Scene scene;
 	game.setScene(scene);
 
-	engine::Sprite sprite{"circ.png"};
+	engine::Sprite sprite{"face.png"};
 	// May create multiple sprites of the same content.
 	engine::Node n1 = scene.addChild(sprite);
-	engine::Node camera = scene.addChild();
+	engine::Node camera = n1->addChild();
 	game.setCamera(camera);
 
-	game.run([&] {
-		float trans_amount = 512 * game.getDeltaTime();
+	game.run([&](double delta_time) {
+		float trans_amount = 512 * delta_time;
 		n1->translate(trans_amount, trans_amount);
-		float rot_amount = 90 * game.getDeltaTime();
+		float rot_amount = 90 * delta_time;
 		n1->rotate(rot_amount);
 	});
 

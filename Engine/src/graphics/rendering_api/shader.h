@@ -18,36 +18,28 @@ namespace engine {
 		~Shader();
 
 		void use() const {
-			glUseProgram(program);
-		}
+			glUseProgram(program); }
 
 		void setBool(const char* name, bool value) const {
-			glUniform1i(glGetUniformLocation(program, name), (int)value);
-		}
+			glUniform1i(glGetUniformLocation(program, name), (int)value); }
 
 		void setInt(const char* name, int value) const {
-			glUniform1i(glGetUniformLocation(program, name), value);
-		}
+			glUniform1i(glGetUniformLocation(program, name), value); }
 
 		void setFloat(const char* name, float value) const {
-			glUniform1f(glGetUniformLocation(program, name), value);
-		}
+			glUniform1f(glGetUniformLocation(program, name), value); }
 
 		void setVec2(const char* name, float x, float y) const {
-			glUniform2f(glGetUniformLocation(program, name), x, y);
-		}
+			glUniform2f(glGetUniformLocation(program, name), x, y); }
 
 		void setVec3(const char* name, float x, float y, float z) const {
-			glUniform3f(glGetUniformLocation(program, name), x, y, z);
-		}
+			glUniform3f(glGetUniformLocation(program, name), x, y, z); }
 
 		void setVec4(const char* name, float x, float y, float z, float w) const {
-			glUniform4f(glGetUniformLocation(program, name), x, y, z, w);
-		}
+			glUniform4f(glGetUniformLocation(program, name), x, y, z, w); }
 
 		void setMat4(const char* name, const glm::mat4x4& m) const {
-			glUniformMatrix4fv(glGetUniformLocation(program, name), 1, GL_FALSE, &m[0][0]);
-		}
+			glUniformMatrix4fv(glGetUniformLocation(program, name), 1, GL_FALSE, &m[0][0]); }
 	};
 
 }

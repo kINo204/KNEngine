@@ -26,11 +26,11 @@ namespace engine
 		Window::Terminate();
 	}
 
-	void Game::run(std::function<void ()> GameLoop)
+	void Game::run(std::function<void (double)> GameLoop)
 	{
 		wnd.run([&] {
 			updateTime();
-			GameLoop();
+			GameLoop(Game::getDeltaTime());
 			renderer.renderScene(*scene);
 		});
 	}

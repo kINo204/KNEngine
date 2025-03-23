@@ -39,16 +39,13 @@
     <ClInclude Include="src\graphics\renderable.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\shader.h">
+    <ClInclude Include="src\graphics\rendering_api\shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\render_command.h">
+    <ClInclude Include="src\graphics\rendering_api\mesh.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\mesh.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\objects\sprite.h">
+    <ClInclude Include="src\graphics\renderables\sprite.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\include\glm\detail\_features.hpp">
@@ -915,7 +912,7 @@
     <ClInclude Include="src\include\glm\vector_relational.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\texture.h">
+    <ClInclude Include="src\graphics\rendering_api\texture.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -929,7 +926,7 @@
     <ClCompile Include="src\graphics\scene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\objects\sprite.cpp">
+    <ClCompile Include="src\graphics\renderables\sprite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dep\stb_image.cpp">
@@ -938,13 +935,10 @@
     <ClCompile Include="src\graphics\renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\shader.cpp">
+    <ClCompile Include="src\graphics\rendering_api\shader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\render_command.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\mesh.cpp">
+    <ClCompile Include="src\graphics\rendering_api\mesh.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dep\gl.c">
@@ -956,7 +950,7 @@
     <ClCompile Include="src\include\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\texture.cpp">
+    <ClCompile Include="src\graphics\rendering_api\texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

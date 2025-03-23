@@ -27,7 +27,7 @@ namespace engine
 		Game() = default;
 
 	public:
-		void run(std::function<void ()> GameLoop);
+		void run(std::function<void (double)> GameLoop);
 
 		void updateTime();
 		double getDeltaTime() { return time_delta; }

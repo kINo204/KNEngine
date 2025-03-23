@@ -1,7 +1,7 @@
 #pragma once
 
 #include "scene.h"
-#include "shader.h"
+#include "rendering_api/shader.h"
 
 #include <memory>
 

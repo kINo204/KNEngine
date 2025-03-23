@@ -1,9 +1,9 @@
 #pragma once
 
 #include "macros.h"
-#include "../mesh.h"
-#include "../shader.h"
-#include "../texture.h"
+#include "../rendering_api/mesh.h"
+#include "../rendering_api/shader.h"
+#include "../rendering_api/texture.h"
 #include "../renderable.h"
 #include "../renderer.h"
 
