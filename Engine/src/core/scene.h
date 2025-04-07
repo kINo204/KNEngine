@@ -2,7 +2,7 @@
 
 #include "macros.h"
 
-#include "graphics/renderables/sprite.h"
+#include "graphics/renderables/renderable.h"
 
 #include "glm/mat4x4.hpp"
 

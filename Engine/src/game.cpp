@@ -38,7 +38,7 @@ namespace engine
 			updateTime();
 			GameLoop(Game::getDeltaTime());
 			// Run engine systems:
-			renderer.renderScene(*scene);
+			renderer.renderScene(*scene, *camera);
 		});
 	}
 }

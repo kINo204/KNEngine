@@ -11,7 +11,7 @@ namespace engine {
 	public:
 		static void Init();
 
-		void renderScene(Scene& scene);
+		void renderScene(Scene& scene, Camera& camera);
 	};
 
 }

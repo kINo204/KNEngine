@@ -1,6 +1,5 @@
 #include "renderer.h"
 
-#include "game.h"
 #include "utils/shader.h"
 
 #include "glm/gtc/matrix_transform.hpp"
@@ -33,7 +32,7 @@ namespace engine {
 		);
 	}
 
-	void Renderer::renderScene(Scene& scene) {
+	void Renderer::renderScene(Scene& scene, Camera& camera) {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Update nodes' model transitions.
@@ -43,7 +42,7 @@ namespace engine {
 		// Note: Ensure the center point to be (0,0) for view trans to work properly!
 		glm::mat4 proj = glm::ortho(-4000.f, 4000.f, -3000.f, 3000.f);
 
-		glm::mat4 view = glm::inverse(Game::GetInstance().getCamera().model_trans);
+		glm::mat4 view = glm::inverse(camera.model_trans);
 
 		// Sort renderable objects.
 		std::vector<std::shared_ptr<SceneNode>> sequence;
