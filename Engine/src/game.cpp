@@ -36,9 +36,15 @@ namespace engine
 	{
 		wnd.run([&] {
 			updateTime();
-			GameLoop(Game::getDeltaTime());
-			// Run engine systems:
-			renderer.renderScene(*scene, *camera);
+			GameLoop(time_delta); // client gameloop
+
+			// Update scene graph status
+			scene->updateCoordsRecursive();
+			auto nodes = scene->toSequence(); // serialized scene nodes
+
+			// Run systems
+			renderer.renderScene(nodes, *camera);
+			animator.updateScene(nodes, time_delta);
 		});
 	}
 }

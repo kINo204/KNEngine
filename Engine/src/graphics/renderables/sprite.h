@@ -16,6 +16,8 @@ namespace engine {
 
 	class ENGINE_API Sprite : public Renderable
 	{
+		friend class Animation;
+
 	private:
 		int width = 0, height = 0, nchannels = 0;
 		std::unique_ptr<MeshElement> mesh = nullptr;
@@ -30,6 +32,8 @@ namespace engine {
 
 		void render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) override;
 		void setAnchor(float x, float y) { anchor = { x, y }; }
+		void setViewport(std::span<GLfloat> uv_coords);
+
 	};
 
 }

@@ -25,16 +25,17 @@ namespace engine
 	class ENGINE_API SceneNode
 	{
 		friend class Renderer;
+		friend class Animator;
 
 	private:
 		SceneNode* parent = nullptr; // no ownership
 		std::vector<std::shared_ptr<SceneNode>> children;
 
-		glm::mat4 model_trans_rel = glm::mat4(1.0f); // Relative to parent.
-		glm::mat4 model_trans = glm::mat4(1.0f); // Absolute world transformation, for calculation.
+		glm::mat4 model_trans_rel = glm::mat4(1.0f); // Relative to parent
+		glm::mat4 model_trans = glm::mat4(1.0f); // Absolute world transformation, for calculation
 		bool model_trans_dirty = true;
 
-		// Entity's compoments (eCs):
+		// Entity's compoments (eCs)
 		Renderable* renderable = nullptr; // no ownership
 
 	public:
@@ -45,6 +46,7 @@ namespace engine
 		SceneNode(SceneNode&& other) = default;
 		SceneNode& operator=(SceneNode&& other) = default;
 
+		std::vector<std::shared_ptr<SceneNode>> toSequence();
 		std::shared_ptr<SceneNode> addChild();
 		std::shared_ptr<SceneNode> addChild(Renderable& child);
 		void updateCoordsRecursive(bool parent_trans_dirty = false);

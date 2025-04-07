@@ -6,11 +6,11 @@ namespace engine
 {
 	class Renderable {
 	public:
-		enum class Type {
+		const enum class Type {
 			NONE,
 			SPRITE,
-		};
-		const Type type;
+			ANIMATION,
+		} type;
 		Renderable(Type t) : type(t) {}
 
 		virtual void render(const glm::mat4&proj, const glm::mat4& view, const glm::mat4& model) = 0;

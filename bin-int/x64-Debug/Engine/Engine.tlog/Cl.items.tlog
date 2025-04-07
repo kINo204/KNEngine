@@ -1,5 +1,7 @@
 D:\WorkDir\KNEngine\KNEngine\Engine\dep\gl.c;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\gl.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\dep\stb_image.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\stb_image.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\animator.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\animator.obj
+D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\animation.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\animation.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\mesh.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\sprite.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\sprite.obj
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderer.cpp;D:\WorkDir\KNEngine\KNEngine\bin-int\x64-Debug\Engine\renderer.obj

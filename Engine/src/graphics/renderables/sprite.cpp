@@ -65,4 +65,17 @@ namespace engine
 		texture->disuse();
 	}
 
+	void Sprite::setViewport(std::span<GLfloat> uv_coords) {
+		GLfloat w = (uv_coords[2] - uv_coords[0]) * width,
+				h = (uv_coords[5] - uv_coords[3]) * height;
+		GLfloat vtx_coords[] = {
+			0.0f, 0.0f, 0.0f,
+			w, 0.0f, 0.0f,
+			w, h, 0.0f,
+			0.0f, h, 0.0f,
+		};
+		mesh->modData(vtx_coords, 0);
+		mesh->modData(uv_coords, 12);
+	}
+
 }

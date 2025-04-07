@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\animator.h" />
+    <ClInclude Include="src\graphics\renderables\animation.h" />
     <ClInclude Include="src\graphics\utils\mesh.h" />
     <ClInclude Include="src\graphics\renderables\sprite.h" />
     <ClInclude Include="src\graphics\renderables\renderable.h" />
@@ -314,6 +316,8 @@
   <ItemGroup>
     <ClCompile Include="dep\gl.c" />
     <ClCompile Include="dep\stb_image.cpp" />
+    <ClCompile Include="src\graphics\animator.cpp" />
+    <ClCompile Include="src\graphics\renderables\animation.cpp" />
     <ClCompile Include="src\graphics\utils\mesh.cpp" />
     <ClCompile Include="src\graphics\renderables\sprite.cpp" />
     <ClCompile Include="src\graphics\renderer.cpp" />

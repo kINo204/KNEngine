@@ -11,7 +11,10 @@ namespace engine {
 	protected:
 		GLuint vao = 0, vbo = 0;
 		size_t count;
-		Mesh(size_t count) : count{ count } {}
+		Mesh(
+			const std::span<GLfloat> vertices,
+			const std::span<std::array<size_t, 3>> attrib_config,
+			size_t count);
 
 	public:
 		void use() { glBindVertexArray(vao); }
@@ -26,7 +29,7 @@ namespace engine {
 		MeshArray(
 			const std::span<GLfloat> vertices,
 			const std::span<std::array<size_t, 3>> attrib_config,
-			size_t count);
+			size_t count) : Mesh{ vertices, attrib_config, count } { }
 		~MeshArray();
 
 		void draw() override;

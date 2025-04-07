@@ -37,11 +37,26 @@ namespace engine {
 			dirty = true;
 			model_trans_dirty = false;
 		}
-		std::cout << model_trans_rel << std::endl;
 
 		for (auto& child : children) {
 			child->updateCoordsRecursive(dirty);
 		}
+	}
+
+	std::vector<std::shared_ptr<SceneNode>> SceneNode::toSequence() {
+		std::vector<std::shared_ptr<SceneNode>> sequence;
+
+		// First-class children
+		// Use value semantics; children are shared pointers
+		for (auto node : children) sequence.push_back(node);
+
+		// Add children recursively until done
+		for (int i = 0; i < sequence.size(); i++) {
+			for (auto& child : sequence[i]->children)
+				sequence.push_back(child);
+		}
+
+		return sequence;
 	}
 
 	void SceneNode::translate(float trans_x, float trans_y) {

@@ -5,6 +5,7 @@
 #include "core/window.h"
 #include "core/scene.h"
 #include "graphics/renderer.h"
+#include "graphics/animator.h"
 
 namespace engine
 {
@@ -21,6 +22,7 @@ namespace engine
 		double time_delta = 0.0, time_last_frame = 0.0;
 		Window wnd;
 		Renderer renderer;
+		Animator animator;
 		Scene* scene = nullptr;
 		Node camera = nullptr;
 

@@ -32,26 +32,14 @@ namespace engine {
 		);
 	}
 
-	void Renderer::renderScene(Scene& scene, Camera& camera) {
+	void Renderer::renderScene(std::vector<Node>& sequence, Camera& camera) {
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		// Update nodes' model transitions.
-		scene.updateCoordsRecursive();
-
-		// TODO Build ortho matrix.
 		// Note: Ensure the center point to be (0,0) for view trans to work properly!
-		glm::mat4 proj = glm::ortho(-4000.f, 4000.f, -3000.f, 3000.f);
-
+		glm::mat4 proj = glm::ortho(-400.f, 400.f, -300.f, 300.f);
 		glm::mat4 view = glm::inverse(camera.model_trans);
 
-		// Sort renderable objects.
-		std::vector<std::shared_ptr<SceneNode>> sequence;
-		for (auto node : scene.children) sequence.push_back(node);
-		for (int i = 0; i < sequence.size(); i++) {
-			for (auto& child : sequence[i]->children)
-				sequence.push_back(child);
-		}
-
+		// If contains Renderable component, render
 		for (auto& node : sequence) {
 			if (node->renderable) {
 				node->renderable->render(proj, view, node->model_trans);
