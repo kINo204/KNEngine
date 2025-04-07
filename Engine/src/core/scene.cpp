@@ -13,8 +13,8 @@ namespace engine {
 		return node;
 	}
 
-	std::shared_ptr<SceneNode> SceneNode::addChild(Renderable& content) {
-		std::shared_ptr<SceneNode> node = std::make_shared<SceneNode>(content);
+	std::shared_ptr<SceneNode> SceneNode::addChild(Renderable& r) {
+		std::shared_ptr<SceneNode> node = std::make_shared<SceneNode>(r);
 		node->parent = this;
 		children.push_back(node);
 		return node;
@@ -30,7 +30,7 @@ namespace engine {
 		return os;
 	}
 
-	void SceneNode::updateModelTransRecursive(bool parent_trans_dirty) {
+	void SceneNode::updateCoordsRecursive(bool parent_trans_dirty) {
 		bool dirty = false;
 		if (parent != nullptr && (parent_trans_dirty || model_trans_dirty)) {
 			model_trans = parent->model_trans * model_trans_rel;
@@ -40,7 +40,7 @@ namespace engine {
 		std::cout << model_trans_rel << std::endl;
 
 		for (auto& child : children) {
-			child->updateModelTransRecursive(dirty);
+			child->updateCoordsRecursive(dirty);
 		}
 	}
 

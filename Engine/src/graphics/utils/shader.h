@@ -5,6 +5,8 @@
 #include "glad/gl.h"
 #include "glm/glm.hpp"
 
+#include <memory>
+
 namespace engine {
 
 	class ENGINE_API Shader
@@ -14,6 +16,9 @@ namespace engine {
 		GLuint compileShader(const char* source, GLenum type);
 
 	public:
+		// Define default shaders.
+		static std::shared_ptr<Shader> SHADER_DEFAULT;
+
 		Shader(const char* vertexShader, const char* fragmentShader);
 		~Shader();
 

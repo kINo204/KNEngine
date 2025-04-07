@@ -1,16 +1,15 @@
 #pragma once
 
 #include "macros.h"
-#include "../rendering_api/mesh.h"
-#include "../rendering_api/shader.h"
-#include "../rendering_api/texture.h"
-#include "../renderable.h"
-#include "../renderer.h"
+
+#include "renderable.h"
+#include "../utils/mesh.h"
+#include "../utils/shader.h"
+#include "../utils/texture.h"
 
 #include "glm/vec2.hpp"
 #include "glad/gl.h"
 
-#include <stdexcept>
 #include <memory>
 
 namespace engine {
@@ -21,7 +20,7 @@ namespace engine {
 		int width = 0, height = 0, nchannels = 0;
 		std::unique_ptr<MeshElement> mesh = nullptr;
 		std::unique_ptr<Texture> texture = nullptr;
-		std::shared_ptr<Shader> shader = Renderer::SHADER_SPRITE_DEFAULT;
+		std::shared_ptr<Shader> shader = Shader::SHADER_DEFAULT;
 
 		// Anchor point.
 		glm::vec2 anchor = { 0.5f, 0.5f };

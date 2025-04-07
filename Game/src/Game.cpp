@@ -15,7 +15,7 @@ int main()
 	engine::Sprite sprite{"face.png"};
 	// May create multiple sprites of the same content.
 	engine::Node n1 = scene.addChild(sprite);
-	engine::Node camera = n1->addChild();
+	engine::Node camera = scene.addChild();
 	game.setCamera(camera);
 
 	game.run([&](double delta_time) {

@@ -26,18 +26,19 @@ namespace engine
 		Window::Terminate();
 	}
 
+	void Game::updateTime() {
+		double time = glfwGetTime();
+		time_delta = time - time_last_frame;
+		time_last_frame = time;
+	}
+
 	void Game::run(std::function<void (double)> GameLoop)
 	{
 		wnd.run([&] {
 			updateTime();
 			GameLoop(Game::getDeltaTime());
+			// Run engine systems:
 			renderer.renderScene(*scene);
 		});
-	}
-
-	void Game::updateTime() {
-		double time = glfwGetTime();
-		time_delta = time - time_last_frame;
-		time_last_frame = time;
 	}
 }

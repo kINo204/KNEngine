@@ -4,13 +4,14 @@
 #include "glm/gtc/matrix_transform.hpp"
 
 #include <iostream>
+#include <stdexcept>
 #include <string>
 
 
 namespace engine
 {
 
-	Sprite::Sprite(const char* fileName)
+	Sprite::Sprite(const char* fileName): Renderable(Type::SPRITE)
 	{
 		// Load the texture image.
 		unsigned char* image = stbi_load(fileName, &width, &height, &nchannels, 0);

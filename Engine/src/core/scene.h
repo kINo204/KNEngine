@@ -2,7 +2,7 @@
 
 #include "macros.h"
 
-#include "renderable.h"
+#include "graphics/renderables/sprite.h"
 
 #include "glm/mat4x4.hpp"
 
@@ -10,7 +10,6 @@
 #include <memory>
 #include <variant>
 #include <iostream>
-
 
 
 namespace engine
@@ -22,6 +21,7 @@ namespace engine
 	framework, such as sprites, geometries, light, camera, etc, to provide actual
 	rendering details.
 	*/
+	// Entity (Ecs):
 	class ENGINE_API SceneNode
 	{
 		friend class Renderer;
@@ -34,12 +34,12 @@ namespace engine
 		glm::mat4 model_trans = glm::mat4(1.0f); // Absolute world transformation, for calculation.
 		bool model_trans_dirty = true;
 
-		// Object content.
+		// Entity's compoments (eCs):
 		Renderable* renderable = nullptr; // no ownership
 
 	public:
 		SceneNode() = default;
-		SceneNode(Renderable& renderable) : renderable(&renderable) {};
+		SceneNode(Renderable& r) : renderable(&r) {}
 		SceneNode(const SceneNode& other) = default;
 		SceneNode& operator=(const SceneNode& other) = default;
 		SceneNode(SceneNode&& other) = default;
@@ -47,7 +47,7 @@ namespace engine
 
 		std::shared_ptr<SceneNode> addChild();
 		std::shared_ptr<SceneNode> addChild(Renderable& child);
-		void updateModelTransRecursive(bool parent_trans_dirty = false);
+		void updateCoordsRecursive(bool parent_trans_dirty = false);
 		void translate(float trans_x, float trans_y);
 		void rotate(float angle);
 	};

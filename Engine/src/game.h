@@ -3,8 +3,8 @@
 #include "macros.h"
 
 #include "core/window.h"
+#include "core/scene.h"
 #include "graphics/renderer.h"
-#include "graphics/scene.h"
 
 namespace engine
 {
@@ -25,11 +25,11 @@ namespace engine
 		Node camera = nullptr;
 
 		Game() = default;
+		void updateTime();
 
 	public:
 		void run(std::function<void (double)> GameLoop);
 
-		void updateTime();
 		double getDeltaTime() { return time_delta; }
 		Scene& getScene() const { return *scene; }
 		void setScene(Scene& scene) { this->scene = &scene; }

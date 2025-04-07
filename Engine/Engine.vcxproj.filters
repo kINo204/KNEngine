@@ -24,7 +24,7 @@
     <ClInclude Include="src\core\window.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\scene.h">
+    <ClInclude Include="src\core\scene.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\scene.h">
@@ -36,13 +36,13 @@
     <ClInclude Include="src\graphics\renderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\renderable.h">
+    <ClInclude Include="src\graphics\renderables\renderable.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\rendering_api\shader.h">
+    <ClInclude Include="src\graphics\utils\shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\rendering_api\mesh.h">
+    <ClInclude Include="src\graphics\utils\mesh.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\renderables\sprite.h">
@@ -912,7 +912,7 @@
     <ClInclude Include="src\include\glm\vector_relational.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\rendering_api\texture.h">
+    <ClInclude Include="src\graphics\utils\texture.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -923,7 +923,7 @@
     <ClCompile Include="src\game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\scene.cpp">
+    <ClCompile Include="src\core\scene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\renderables\sprite.cpp">
@@ -935,10 +935,10 @@
     <ClCompile Include="src\graphics\renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\rendering_api\shader.cpp">
+    <ClCompile Include="src\graphics\utils\shader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\rendering_api\mesh.cpp">
+    <ClCompile Include="src\graphics\utils\mesh.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dep\gl.c">
@@ -950,7 +950,7 @@
     <ClCompile Include="src\include\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\rendering_api\texture.cpp">
+    <ClCompile Include="src\graphics\utils\texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

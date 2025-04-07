@@ -2,5 +2,4 @@
 
 #include "../game.h"
 
-#include "../graphics/scene.h"
-#include "../graphics/renderables/sprite.h"
+#include "../core/scene.h"

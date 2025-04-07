@@ -4,6 +4,8 @@
 
 namespace engine {
 
+	std::shared_ptr<Shader> Shader::SHADER_DEFAULT = nullptr;
+
 	GLuint Shader::compileShader(const char* source, GLenum type) {
 		GLuint shader = glCreateShader(type);
 		glShaderSource(shader, 1, &source, nullptr);
