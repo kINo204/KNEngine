@@ -19,7 +19,8 @@ namespace engine {
 		friend class Animation;
 
 	private:
-		int width = 0, height = 0, nchannels = 0;
+		int width = 0, height = 0, nchannels = 0; // picture info
+		double viewport_w, viewport_h; // normalized viewport size (relative to picture size)
 		std::unique_ptr<MeshElement> mesh = nullptr;
 		std::unique_ptr<Texture> texture = nullptr;
 		std::shared_ptr<Shader> shader = Shader::SHADER_DEFAULT;

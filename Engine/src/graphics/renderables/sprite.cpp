@@ -20,7 +20,12 @@ namespace engine
 		if (!image) {
 			throw std::runtime_error("[Creating Sprite] Failed to load image: " + std::string(fileName));
 		}
+
+		viewport_w = width;
+		viewport_h = height;
+
 		texture = std::make_unique<Texture>(0, image, width, height, nchannels);
+
 		stbi_image_free(image);
 
 		// Setup mesh object.
@@ -46,7 +51,7 @@ namespace engine
 
     void Sprite::render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) {
 		glm::mat4 anchor_trans = glm::translate(glm::mat4(1.f),
-				glm::vec3(-this->anchor[0] * width, -this->anchor[1] * height, 0.f));
+				glm::vec3(-this->anchor[0] * viewport_w, -this->anchor[1] * viewport_h, 0.f));
 
 		texture->use();
 
@@ -66,8 +71,10 @@ namespace engine
 	}
 
 	void Sprite::setViewport(std::span<GLfloat> uv_coords) {
-		GLfloat w = (uv_coords[2] - uv_coords[0]) * width,
-				h = (uv_coords[5] - uv_coords[3]) * height;
+		double w = viewport_w = (uv_coords[2] - uv_coords[0]) * width;
+		assert(w == viewport_w);
+		double h = viewport_h = (uv_coords[5] - uv_coords[3]) * height;
+
 		GLfloat vtx_coords[] = {
 			0.0f, 0.0f, 0.0f,
 			w, 0.0f, 0.0f,
