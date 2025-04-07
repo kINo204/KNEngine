@@ -7,11 +7,21 @@
 
 namespace engine {
 
-	class MeshArray {
-	private:
-		GLuint vao, vbo;
+	class Mesh {
+	protected:
+		GLuint vao = 0, vbo = 0;
 		size_t count;
+		Mesh(size_t count) : count{ count } {}
 
+	public:
+		void use() { glBindVertexArray(vao); }
+		static void disuse() { glBindVertexArray(0); }
+		void modData(std::span<GLfloat> data, size_t ofs_count);
+
+		virtual void draw() = 0;
+	};
+
+	class MeshArray : public Mesh {
 	public:
 		MeshArray(
 			const std::span<GLfloat> vertices,
@@ -19,16 +29,12 @@ namespace engine {
 			size_t count);
 		~MeshArray();
 
-		void use();
-		void draw();
-		static void disuse();
-
+		void draw() override;
 	};
 
-	class MeshElement {
+	class MeshElement : public Mesh {
 	private:
-		GLuint vao, vbo, ebo;
-		size_t count;
+		GLuint ebo;
 
 	public:
 		MeshElement(
@@ -37,10 +43,7 @@ namespace engine {
 			const std::span<GLuint> indices);
 		~MeshElement();
 
-		void modData(std::span<GLfloat> data, size_t ofs_count);
-		void use();
-		void draw();
-		static void disuse();
+		void draw() override;
 	};
 
 }

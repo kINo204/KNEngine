@@ -2,10 +2,16 @@
 
 namespace engine {
 
+	void Mesh::modData(std::span<GLfloat> data, size_t ofs_count) {
+		glBindBuffer(GL_ARRAY_BUFFER, vbo);
+		glBufferSubData(GL_ARRAY_BUFFER, ofs_count * sizeof(GLfloat), data.size() * sizeof(GLfloat), data.data());
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
 	MeshArray::MeshArray(
 		const std::span<GLfloat> vertices,
 		const std::span<std::array<size_t, 3>> attrib_config,
-		size_t count) : count{ count }
+		size_t count) : Mesh{ count }
 	{
 		glGenVertexArrays(1, &vao);
 		glGenBuffers(1, &vbo);
@@ -27,27 +33,19 @@ namespace engine {
 		glBindVertexArray(0);
 	}
 
-	void MeshArray::use() {
-		glBindVertexArray(vao);
-	}
-
-	void MeshArray::disuse() {
-		glBindVertexArray(0);
+	MeshArray::~MeshArray() {
+		glDeleteVertexArrays(1, &vao);
+		glDeleteBuffers(1, &vbo);
 	}
 
 	void MeshArray::draw() {
 		glDrawArrays(GL_TRIANGLES, 0, count);
 	}
 
-	MeshArray::~MeshArray() {
-		glDeleteVertexArrays(1, &vao);
-		glDeleteBuffers(1, &vbo);
-	}
-
 	MeshElement::MeshElement(
 		const std::span<GLfloat> vertices,
 		const std::span<std::array<size_t, 3>> attrib_config,
-		const std::span<GLuint> indices) : count{ indices.size() }
+		const std::span<GLuint> indices) : Mesh{ indices.size() }
 	{
 		glGenVertexArrays(1, &vao);
 		glGenBuffers(1, &vbo);
@@ -73,28 +71,14 @@ namespace engine {
 		glBindVertexArray(0);
 	}
 
-	void MeshElement::modData(std::span<GLfloat> data, size_t ofs_count) {
-		glBindBuffer(GL_ARRAY_BUFFER, vbo);
-		glBufferSubData(GL_ARRAY_BUFFER, ofs_count * sizeof(GLfloat), data.size() * sizeof(GLfloat), data.data());
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-	}
-
-	void MeshElement::use() {
-		glBindVertexArray(vao);
-	}
-
-	void MeshElement::disuse() {
-		glBindVertexArray(0);
-	}
-
-	void MeshElement::draw() {
-		glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);
-	}
-
 	MeshElement::~MeshElement() {
 		glDeleteVertexArrays(1, &vao);
 		glDeleteBuffers(1, &vbo);
 		glDeleteBuffers(1, &ebo);
+	}
+
+	void MeshElement::draw() {
+		glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);
 	}
 
 }
