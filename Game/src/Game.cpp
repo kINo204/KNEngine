@@ -19,10 +19,10 @@ int main()
 	game.setCamera(camera);
 
 	game.run([&](double delta_time) {
-		float trans_amount = 512 * delta_time;
-		n1->translate(trans_amount, trans_amount);
-		float rot_amount = 90 * delta_time;
-		n1->rotate(rot_amount);
+		//float trans_amount = 512 * delta_time;
+		//n1->translate(trans_amount, trans_amount);
+		//float rot_amount = 90 * delta_time;
+		//n1->rotate(rot_amount);
 	});
 
 	Game::Terminate();

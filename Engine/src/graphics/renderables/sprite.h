@@ -2,13 +2,13 @@
 
 #include "macros.h"
 
-#include "renderable.h"
 #include "../utils/mesh.h"
 #include "../utils/shader.h"
 #include "../utils/texture.h"
+#include "renderable.h"
 
-#include "glm/vec2.hpp"
 #include "glad/gl.h"
+#include "glm/vec2.hpp"
 
 #include <memory>
 
@@ -22,7 +22,7 @@ namespace engine {
 		std::unique_ptr<Texture> texture = nullptr;
 		std::shared_ptr<Shader> shader = Shader::SHADER_DEFAULT;
 
-		// Anchor point.
+		// Anchor point(relative).
 		glm::vec2 anchor = { 0.5f, 0.5f };
 
 	public:
