@@ -73,6 +73,12 @@ namespace engine {
 		glBindVertexArray(0);
 	}
 
+	void MeshElement::modData(std::span<GLfloat> data, size_t ofs_count) {
+		glBindBuffer(GL_ARRAY_BUFFER, vbo);
+		glBufferSubData(GL_ARRAY_BUFFER, ofs_count * sizeof(GLfloat), data.size() * sizeof(GLfloat), data.data());
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
 	void MeshElement::use() {
 		glBindVertexArray(vao);
 	}

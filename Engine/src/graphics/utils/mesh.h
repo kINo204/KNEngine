@@ -37,6 +37,7 @@ namespace engine {
 			const std::span<GLuint> indices);
 		~MeshElement();
 
+		void modData(std::span<GLfloat> data, size_t ofs_count);
 		void use();
 		void draw();
 		static void disuse();

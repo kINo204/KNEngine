@@ -1,15 +1,4 @@
 ﻿  正在扫描源以查找模块依赖项...
-  mesh.cpp
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(23,21): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(22,29): warning C4267: “参数”: 从“size_t”转换到“GLint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(22,26): warning C4267: “参数”: 从“size_t”转换到“GLuint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(24,30): warning C4267: “参数”: 从“size_t”转换到“GLuint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(39,33): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(69,21): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(68,29): warning C4267: “参数”: 从“size_t”转换到“GLint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(68,26): warning C4267: “参数”: 从“size_t”转换到“GLuint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(70,30): warning C4267: “参数”: 从“size_t”转换到“GLuint”，可能丢失数据
-D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\mesh.cpp(85,32): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
   sprite.cpp
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\utils\shader.h(20,34): warning C4251: “engine::Shader::SHADER_DEFAULT”:“std::shared_ptr<engine::Shader>”需要有 dll 接口以供“engine::Shader”的客户端使用
   (编译源文件“src/graphics/renderables/sprite.cpp”)
@@ -51,8 +40,6 @@ D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\sprite.cpp(31,11): 
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\sprite.cpp(31,11): warning C4244: “初始化”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\sprite.cpp(32,10): warning C4838: 从“int”转换到“GLfloat”需要收缩转换
 D:\WorkDir\KNEngine\KNEngine\Engine\src\graphics\renderables\sprite.cpp(32,10): warning C4244: “初始化”: 从“int”转换到“GLfloat”，可能丢失数据
-  正在生成代码...
-    正在创建库 D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.lib 和对象 D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.exp
   Engine.vcxproj -> D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.dll
   D:\WorkDir\KNEngine\KNEngine\bin\x64-Debug\Engine\Engine.dll
   复制了 1 个文件
