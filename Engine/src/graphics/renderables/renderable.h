@@ -1,10 +1,12 @@
 #pragma once
 
+#include "macros.h"
+
 #include "glm/mat4x4.hpp"
 
 namespace engine
 {
-	class Renderable {
+	class ENGINE_API Renderable {
 	public:
 		const enum class Type {
 			NONE,

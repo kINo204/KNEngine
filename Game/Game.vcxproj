@@ -18,6 +18,7 @@
     <ClCompile Include="src\Game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="anim.png" />
     <Image Include="circ.png" />
     <Image Include="face.png" />
     <Image Include="wall.jpg" />

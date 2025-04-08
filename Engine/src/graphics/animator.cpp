@@ -10,7 +10,7 @@ namespace engine
 			if (node->renderable && node->renderable->type == Renderable::Type::ANIMATION) {
 				Animation* anim = dynamic_cast<Animation*>(node->renderable);
 				assert(anim != nullptr);
-				anim->stepAnimation(time_delta);
+				anim->step(time_delta);
 			}
 		}
 	}

@@ -12,9 +12,9 @@ int main()
 	engine::Scene scene;
 	game.setScene(scene);
 
-	//engine::Sprite s{ "sprite.png" };
-	engine::Animation s{"sprite.png", 10, 2, 1.0};
-	s.play(); s.should_loop = true;
+	engine::Animation s{"anim.png", 640, 2};
+	s.play();
+	s.should_loop = true;
 	engine::Node n1 = scene.addChild(s);
 	engine::Node camera = scene.addChild();
 	game.setCamera(camera);

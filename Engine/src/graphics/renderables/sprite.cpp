@@ -63,10 +63,9 @@ namespace engine
 		shader->setInt("Tex", 0);
 
 		mesh->use();
-
 		mesh->draw();
-
 		mesh->disuse();
+
 		texture->disuse();
 	}
 

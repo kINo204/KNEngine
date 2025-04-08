@@ -3,14 +3,12 @@
 namespace engine
 {
 
-	Animation::Animation(const char* fileName, int height_section, int height_interval, double time_frame) :
-		Renderable(Type::ANIMATION),
-		sprite(fileName),
-		time_frame(time_frame),
-		height_section(height_section), height_interval(height_interval)
-	{
+	void Animation::updateCurrentFrame() {
 		GLfloat v_low, v_high;
-		int H = sprite.height, h = height_section, d = height_interval, i = current_frame;
+		GLfloat H = static_cast<GLfloat>(sprite.height),
+			h = static_cast<GLfloat>(height_section),
+			d = static_cast<GLfloat>(height_interval),
+			i = static_cast<GLfloat>(current_frame);
 		v_high = 1 - i * (h + d) / H;
 		v_low = v_high - h / H;
 		GLfloat uv[] = {
@@ -22,12 +20,21 @@ namespace engine
 		sprite.setViewport(uv);
 	}
 
-	void Animation::render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) {
-		sprite.render(proj, view, model);
-		printf("Animation frame: %d\n", current_frame);
+	Animation::Animation(const char* fileName, int height_section, int height_interval, double time_frame) :
+		Renderable(Type::ANIMATION),
+		sprite(fileName),
+		time_frame(time_frame),
+		height_section(height_section), height_interval(height_interval),
+		total_frame((height_interval+sprite.height)/(height_interval+height_section))
+	{
+		updateCurrentFrame();
 	}
 
-	void Animation::stepAnimation(double delta_time) {
+	void Animation::render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) {
+		sprite.render(proj, view, model);
+	}
+
+	void Animation::step(double delta_time) {
 		if (!is_playing) return;
 
 		timer += delta_time;
@@ -49,17 +56,7 @@ namespace engine
 			}
 		}
 
-		GLfloat v_low, v_high;
-		GLfloat H = sprite.height, h = height_section, d = height_interval, i = current_frame;
-		v_high = 1 - i * (h + d) / H;
-		v_low = v_high - h / H;
-		GLfloat uv[] = {
-			0, v_low,
-			1, v_low,
-			1, v_high,
-			0, v_high,
-		};
-		sprite.setViewport(uv);
+		updateCurrentFrame();
 	}
 
 }

@@ -17,17 +17,22 @@ namespace engine
 
 		// Animation status
 		bool is_playing = false;
-		int current_frame = 0, total_frame = 2;
-		double timer = 0.0, const time_frame;
+		int current_frame = 0, total_frame = 1;
+		double timer = 0.0, time_frame;
 
 	public:
 		// Configs
 		bool should_loop = false;
 
-		Animation(const char* fileName, int height_section, int height_interval, double time_frame = 0.1);
+		Animation(const char* fileName, int height_section, int height_interval, double time_frame = 0.05);
 
 		void render(const glm::mat4& proj, const glm::mat4& view, const glm::mat4& model) override;
-		void stepAnimation(double delta_time);
+
+	private:
+		void updateCurrentFrame();
+
+	public:
+		void step(double delta_time);
 
 		void play() { is_playing = true; }
 		void pause() { is_playing = false; }
